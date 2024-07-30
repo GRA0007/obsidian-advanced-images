@@ -4,12 +4,21 @@ import type { AdvancedImagesPluginSettings } from 'src/main'
 export const imageCaptionPostProcessor =
   (settings: AdvancedImagesPluginSettings) =>
   async (el: HTMLElement, _ctx: MarkdownPostProcessorContext) => {
-    if (el.findAll('.internal-embed').length === 0) return
+    const totalEmbeds = el.findAll('.internal-embed').length
+    if (totalEmbeds === 0) return
 
-    // Wait for all embedded images to load
+    // Wait for all images to load and return them
     const images: HTMLImageElement[] = await new Promise((resolve) => {
+      if (el.findAll('.internal-embed.is-loaded').length === totalEmbeds) {
+        resolve(
+          el.findAll(
+            '.internal-embed.image-embed.is-loaded img',
+          ) as HTMLImageElement[],
+        )
+      }
+
       const observer = new MutationObserver(() => {
-        if (el.findAll('.internal-embed.is-loaded').length > 0) {
+        if (el.findAll('.internal-embed.is-loaded').length === totalEmbeds) {
           observer.disconnect()
           resolve(
             el.findAll(
@@ -35,20 +44,23 @@ export const imageCaptionPostProcessor =
       for (const img of images) {
         // If not processed already
         if (img.parentElement?.tagName !== 'FIGURE') {
-          const fig = document.createElement('figure')
-          fig.append(img.cloneNode())
-          if (img.hasAttribute('width')) {
-            fig.style.width = `${img.getAttribute('width')}px`
-          }
-
           const captionText = getCaption(img, settings)
-          if (captionText) {
-            const caption = document.createElement('figcaption')
-            caption.append(document.createTextNode(captionText))
-            fig.append(caption)
-          }
 
-          img.replaceWith(fig)
+          if (captionText) {
+            const fig = document.createElement('figure')
+            fig.append(img.cloneNode())
+            if (img.hasAttribute('width')) {
+              fig.style.width = `${img.getAttribute('width')}px`
+            }
+
+            if (captionText) {
+              const caption = document.createElement('figcaption')
+              caption.append(document.createTextNode(captionText))
+              fig.append(caption)
+            }
+
+            img.replaceWith(fig)
+          }
         }
       }
     }
