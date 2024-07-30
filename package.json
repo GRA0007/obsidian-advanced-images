@@ -1,0 +1,49 @@
+{
+  "name": "obsidian-advanced-images",
+  "version": "0.0.0",
+  "packageManager": "yarn@4.3.1",
+  "description": "Advanced image toolkit: side-by-side, gallery, captions and compression",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs",
+    "lint": "biome check",
+    "format": "biome check --fix"
+  },
+  "keywords": [
+    "obsidian",
+    "image",
+    "advanced",
+    "compress",
+    "side-by-side",
+    "layout",
+    "gallery",
+    "masonry",
+    "grid",
+    "table",
+    "caption",
+    "optimization"
+  ],
+  "author": "Benji Grant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GRA0007/obsidian-advanced-images.git"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/node": "^20.14.11",
+    "builtin-modules": "3.3.0",
+    "covector": "^0.12.2",
+    "esbuild": "0.23.0",
+    "obsidian": "latest",
+    "tslib": "2.6.3",
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.10.2",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.28.5"
+  }
+}

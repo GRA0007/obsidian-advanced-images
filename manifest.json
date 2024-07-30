@@ -1,0 +1,14 @@
+{
+  "id": "advanced-images",
+  "name": "Advanced Images",
+  "version": "0.1.0",
+  "minAppVersion": "0.15.0",
+  "description": "Advanced image toolkit: side-by-side, gallery, captions and compression",
+  "author": "Benji Grant",
+  "authorUrl": "https://bengrant.dev",
+  "fundingUrl": {
+    "Ko-fi": "https://ko-fi.com/benpai",
+    "GitHub Sponsor": "https://github.com/sponsors/GRA0007"
+  },
+  "isDesktopOnly": false
+}

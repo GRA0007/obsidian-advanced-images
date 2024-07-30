@@ -1,0 +1,11 @@
+node_modules
+.yarn
+.DS_Store
+
+main.js
+
+# Exclude sourcemaps
+*.map
+
+# obsidian
+data.json
