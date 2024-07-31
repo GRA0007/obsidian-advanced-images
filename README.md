@@ -6,7 +6,31 @@
 
 Advanced image toolkit for Obsidian!
 
-This project is in alpha and under development.
+> [!WARNING]
+> This project is in alpha and under development.
+
+## Features
+
+### Captions
+
+Display image alt text as a caption beneath the image.
+
+To use, add an alt text like `![[image.jpg|My cool caption]]` or `![My cool caption](test.jpg)`.
+
+If you want to display the file name, you can use a `%` symbol instead: `![[image.jpg|%]]`.
+
+### Layout
+
+Display images side-by-side by placing them next to each other in the source. The following will show two images on one row, and then three on the next row:
+
+```md
+![[one.jpg]]
+![[two.jpg]]
+
+![[three.jpg]]
+![[four.jpg]]
+![[five.jpg]]
+```
 
 ## Development
 

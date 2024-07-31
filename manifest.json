@@ -3,7 +3,7 @@
   "name": "Advanced Images",
   "version": "0.1.0",
   "minAppVersion": "0.15.0",
-  "description": "Advanced image toolkit: side-by-side, gallery, captions and compression",
+  "description": "Advanced image toolkit: side-by-side, gallery and captions",
   "author": "Benji Grant",
   "authorUrl": "https://bengrant.dev",
   "fundingUrl": {
