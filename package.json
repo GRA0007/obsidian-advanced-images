@@ -1,6 +1,6 @@
 {
   "name": "obsidian-advanced-images",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "yarn@4.3.1",
   "description": "Advanced image toolkit: side-by-side, gallery and captions",
   "main": "main.js",
