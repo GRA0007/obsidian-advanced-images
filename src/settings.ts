@@ -11,7 +11,7 @@ export interface AdvancedImagesPluginSettings {
   sideBySideMaxColumns: number
 
   // Gallery
-  galleryEnabled: boolean
+  // galleryEnabled: boolean
 }
 
 export const DEFAULT_SETTINGS: AdvancedImagesPluginSettings = {
@@ -21,7 +21,7 @@ export const DEFAULT_SETTINGS: AdvancedImagesPluginSettings = {
   sideBySideEnabled: true,
   sideBySideMaxColumns: 2,
 
-  galleryEnabled: true,
+  // galleryEnabled: true,
 }
 
 export class AdvancedImagesSettingsTab extends PluginSettingTab {
@@ -108,18 +108,18 @@ export class AdvancedImagesSettingsTab extends PluginSettingTab {
           })
       })
 
-    new Setting(containerEl).setHeading().setName('Gallery')
+    // new Setting(containerEl).setHeading().setName('Gallery')
 
-    new Setting(containerEl)
-      .setName('Enable gallery blocks')
-      .setDesc('Create customizable inline image galleries.')
-      .addToggle((toggle) =>
-        toggle
-          .setValue(this.plugin.settings.galleryEnabled)
-          .onChange(async (value) => {
-            this.plugin.settings.galleryEnabled = value
-            await this.plugin.saveSettings()
-          }),
-      )
+    // new Setting(containerEl)
+    //   .setName('Enable gallery blocks')
+    //   .setDesc('Create customizable inline image galleries.')
+    //   .addToggle((toggle) =>
+    //     toggle
+    //       .setValue(this.plugin.settings.galleryEnabled)
+    //       .onChange(async (value) => {
+    //         this.plugin.settings.galleryEnabled = value
+    //         await this.plugin.saveSettings()
+    //       }),
+    //   )
   }
 }

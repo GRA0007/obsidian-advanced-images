@@ -14,8 +14,6 @@ export default class AdvancedImagesPlugin extends Plugin {
   async onload() {
     await this.loadSettings()
 
-    // this.registerMarkdownPostProcessor(imageCaptionPostProcessor(this.settings))
-
     if (this.settings.captionsEnabled || this.settings.sideBySideEnabled) {
       this.imageObserver = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
