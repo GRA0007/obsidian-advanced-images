@@ -6,7 +6,7 @@
     "perf": "Performance Improvements"
   },
   "packages": {
-    "obsidian-css-inlay-colors": {
+    "obsidian-advanced-images": {
       "version": true,
       "path": ".",
       "releaseTag": "${ pkgFile.version }",

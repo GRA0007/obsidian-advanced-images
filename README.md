@@ -34,7 +34,7 @@ Display images side-by-side by placing them next to each other in the source. Th
 
 ## Roadmap
 
-> [!INFO]
+> [!TIP]
 > Check out the [changelog](./CHANGELOG.md) to see what's already been implemented.
 
 **💬 Captions**
